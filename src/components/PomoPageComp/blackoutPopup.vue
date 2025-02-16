@@ -11,8 +11,8 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogClose, Dia
 
 // CHILDREN COMPONENTS ---------------------------
 import ringtoneComponent from '@/components/PomoPageComp/ringtonePlayer.vue';
-import pomoMessage from '@/components/PomoPageComp/PomoMsg.vue';
-import TaskItemBlackout from '@/components/TaskListComp/TaskItemBlackout.vue';
+import pomoMessage from '@/components/PomoPageComp/pomoMsg.vue';
+import TaskItemBlackout from '@/components/TaskListComp/taskItemBlackout.vue';
 import MusicPomoCard from '@/components/PomoPageComp/musicDrawerCard.vue';
 
 // STATES ---------------------------

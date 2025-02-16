@@ -18,9 +18,9 @@ import { Separator } from '@/components/ui/separator';
 import { FunnelIcon } from '@heroicons/vue/24/solid';
 import { ArrowSmallUpIcon, ArrowSmallDownIcon, ChevronDownIcon } from '@heroicons/vue/24/solid';
 
-import TaskItem from '@/components/TaskListComp/TaskItem.vue';
-import TaskItemCompleted from '@/components/TaskListComp/TaskItemCompleted.vue';
-import RoutinePopup from '@/components/TaskListComp/RoutinePopup.vue'; // Import the new RoutinePopup component
+import TaskItem from '@/components/TaskListComp/taskItem.vue';
+import TaskItemCompleted from '@/components/TaskListComp/taskItemCompleted.vue';
+import RoutinePopup from '@/components/TaskListComp/routinePopup.vue'; // Import the new RoutinePopup component
 import { useUserStore } from '@/stores/UserObjStore'; // Import store
 
 // User ID

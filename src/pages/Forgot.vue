@@ -1,3 +1,39 @@
+<script setup>
+import { ref } from 'vue';
+// Import Firebase Authentication
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
+
+// Define reactive variables
+const email = ref('');
+const message = ref('');
+const success = ref(false);
+
+// Firebase Auth instance
+const auth = getAuth();
+
+// Function to handle form submission and send reset email
+const submitForm = async () => {
+  try {
+    // Ensure email is provided
+    if (email.value.trim()) {
+      await sendPasswordResetEmail(auth, email.value);
+      success.value = true;
+      message.value = `Password reset link sent to: ${email.value}`;
+    } else {
+      success.value = false;
+      message.value = 'Please enter a valid email address.';
+    }
+  } catch (error) {
+    success.value = false;
+    if (error.code === 'auth/user-not-found') {
+      message.value = 'No user found with this email.';
+    } else {
+      message.value = 'An error occurred. Please try again.';
+    }
+  }
+};
+</script>
+
 <template>
     <div class="flex justify-center items-center min-h-screen bg-gray-100">
       <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
@@ -35,44 +71,4 @@
       </div>
     </div>
   </template>
-  
-  <script setup>
-  import { ref } from 'vue';
-  // Import Firebase Authentication
-  import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
-  
-  // Define reactive variables
-  const email = ref('');
-  const message = ref('');
-  const success = ref(false);
-  
-  // Firebase Auth instance
-  const auth = getAuth();
-  
-  // Function to handle form submission and send reset email
-  const submitForm = async () => {
-    try {
-      // Ensure email is provided
-      if (email.value.trim()) {
-        await sendPasswordResetEmail(auth, email.value);
-        success.value = true;
-        message.value = `Password reset link sent to: ${email.value}`;
-      } else {
-        success.value = false;
-        message.value = 'Please enter a valid email address.';
-      }
-    } catch (error) {
-      success.value = false;
-      if (error.code === 'auth/user-not-found') {
-        message.value = 'No user found with this email.';
-      } else {
-        message.value = 'An error occurred. Please try again.';
-      }
-    }
-  };
-  </script>
-  
-  <style scoped>
-  /* Add any additional styling here */
-  </style>
   

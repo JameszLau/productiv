@@ -1,4 +1,3 @@
-<!-- LATEST UPDATE FOR LEADERBOARD, SENT AT 9AM -->
 <script setup>
 import { h, ref, computed, onMounted, watch } from 'vue';
 import { Button } from '@/components/ui/button';
@@ -13,7 +12,7 @@ import { getAuth } from 'firebase/auth';
 import { ChevronDownIcon } from '@heroicons/vue/24/outline';
 import { getStorage, ref as firebaseRef, getDownloadURL } from 'firebase/storage';
 import { useUserStore } from '@/stores/UserObjStore'; // Adjust this path as necessary
-import AddFriend from '@/components/ProfilePageComp/AddFriend.vue';
+import AddFriend from '@/components/ProfilePageComp/addFriend.vue';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const globalData = ref([]);

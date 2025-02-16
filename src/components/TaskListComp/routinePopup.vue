@@ -5,7 +5,7 @@ import { PencilIcon, TrashIcon } from '@heroicons/vue/24/solid';
 import { Dialog, DialogContent, DialogFooter } from '@/components/ui/dialog';
 import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogFooter } from '@/components/ui/alert-dialog';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
-import CreateRoutineModal from '@/components/TaskListComp/CreateRoutineModal.vue';
+import CreateRoutineModal from '@/components/TaskListComp/createRoutineModal.vue';
 
 import { doc, updateDoc, getDoc, arrayRemove, arrayUnion } from 'firebase/firestore';
 import { db } from '@/main'; // Firestore instance

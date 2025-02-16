@@ -2,7 +2,7 @@
 import { ref, watch, computed } from 'vue';
 import { useUserStore } from '@/stores/UserObjStore';
 import { Card, CardHeader, CardContent, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import MindfulPopup from '@/components/MindfulPageComp/MindfulPopup.vue';
+import MindfulPopup from '@/components/MindfulPageComp/mindfulPopup.vue';
 import { Dialog, DialogContent, DialogClose, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { NumberField, NumberFieldContent, NumberFieldDecrement, NumberFieldInput, NumberFieldIncrement } from '@/components/ui/number-field';

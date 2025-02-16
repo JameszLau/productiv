@@ -1,29 +1,3 @@
-<template>
-  <div class="w-full" ref="container">
-    <section class="sticky" ref="stickyRef">
-      <div class="hand-container" ref="handContainerRef">
-        <div class="hand" ref="handRef">
-          <div class="hand-image" ref="handImageRef"></div>
-        </div>
-      </div>
-
-      <div class="intro" ref="introRef">
-        <h1 ref="h1ElementRef">
-          <span>time to</span> be productive
-        </h1>
-        <div class="intro-copy" ref="introCopyRef">
-          <p>Track your focus sessions with our Pomodoro timer</p>
-          <p>Stay productive, achieve more</p>
-        </div>
-      </div>
-
-      <div class="website-content" ref="websiteContentRef">
-        <h1>Productiv</h1>
-      </div>
-    </section>
-  </div>
-</template>
-
 <script setup>
 import { useRouter } from 'vue-router'
 import { ref, onMounted, onUnmounted } from 'vue'
@@ -170,6 +144,32 @@ onUnmounted(() => {
   ScrollTrigger.getAll().forEach(trigger => trigger.kill())
 })
 </script>
+
+<template>
+  <div class="w-full" ref="container">
+    <section class="sticky" ref="stickyRef">
+      <div class="hand-container" ref="handContainerRef">
+        <div class="hand" ref="handRef">
+          <div class="hand-image" ref="handImageRef"></div>
+        </div>
+      </div>
+
+      <div class="intro" ref="introRef">
+        <h1 ref="h1ElementRef">
+          <span>time to</span> be productive
+        </h1>
+        <div class="intro-copy" ref="introCopyRef">
+          <p>Track your focus sessions with our Pomodoro timer</p>
+          <p>Stay productive, achieve more</p>
+        </div>
+      </div>
+
+      <div class="website-content" ref="websiteContentRef">
+        <h1>Productiv</h1>
+      </div>
+    </section>
+  </div>
+</template>
 
 <style scoped>
 :root {

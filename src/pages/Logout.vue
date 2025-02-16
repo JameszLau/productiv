@@ -1,9 +1,3 @@
-<template>
-  <div class="logout-page">
-    <p>Logging you out, please wait...</p>
-  </div>
-</template>
-
 <script setup>
 import { useUserStore } from '@/stores/UserObjStore'; // Your Pinia store
 import { useRouter } from 'vue-router';
@@ -43,6 +37,12 @@ onMounted(() => {
   performLogout(); // Call logout when the component mounts
 });
 </script>
+
+<template>
+  <div class="logout-page">
+    <p>Logging you out, please wait...</p>
+  </div>
+</template>
 
 <style scoped>
 .logout-page {

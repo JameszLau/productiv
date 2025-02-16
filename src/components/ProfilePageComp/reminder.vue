@@ -1,5 +1,4 @@
-
-git <script setup>
+<script setup>
 import { ref, onMounted } from 'vue';
 import { Button } from '@/components/ui/button'
 import {

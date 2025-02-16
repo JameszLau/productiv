@@ -1,16 +1,16 @@
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue';
 import { useUserStore } from '@/stores/UserObjStore';
-import EditProfile from '@/components/ProfilePageComp/EditProfile.vue'; 
-import PomoArrayEdit from '@/components/ProfilePageComp/PomoArrayEdit.vue'; 
-import ReminderEdit from '@/components/ProfilePageComp/Reminder.vue'; 
-import AddFriend from '@/components/ProfilePageComp/AddFriend.vue';
-import BarCard from '@/components/ProfilePageComp/BarCard.vue';
-import DonutCard from '@/components/ProfilePageComp/DonutCard.vue';
-import DailyCard from '@/components/ProfilePageComp/DailyCard.vue';
-import WeeklyCard from '@/components/ProfilePageComp/WeeklyCard.vue';
-import TopCatCard from '@/components/ProfilePageComp/TopCatCard.vue';
-import LineCard from '@/components/ProfilePageComp/LineCard.vue';
+import EditProfile from '@/components/ProfilePageComp/editProfile.vue'; 
+import PomoArrayEdit from '@/components/ProfilePageComp/pomoArrayEdit.vue'; 
+import ReminderEdit from '@/components/ProfilePageComp/reminder.vue'; 
+import AddFriend from '@/components/ProfilePageComp/addFriend.vue';
+import BarCard from '@/components/ProfilePageComp/barCard.vue';
+import DonutCard from '@/components/ProfilePageComp/donutCard.vue';
+import DailyCard from '@/components/ProfilePageComp/dailyCard.vue';
+import WeeklyCard from '@/components/ProfilePageComp/weeklyCard.vue';
+import TopCatCard from '@/components/ProfilePageComp/topCatCard.vue';
+import LineCard from '@/components/ProfilePageComp/lineCard.vue';
 import { PencilIcon, PlusIcon } from '@heroicons/vue/24/solid';
 import { Button } from '@/components/ui/button'
 import {

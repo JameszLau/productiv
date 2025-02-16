@@ -1,8 +1,4 @@
 <script setup>
-// Timer Card Component (child component)
-// Parent: PomodoroMain.vue
-// Children: timerSettingsCard.vue > tsHoverCard.vue
-
 // IMPORTS ---------------------------
     import { ref, computed } from 'vue';
     import { cn } from '@/lib/utils'

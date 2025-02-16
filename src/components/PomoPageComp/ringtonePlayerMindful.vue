@@ -1,4 +1,3 @@
-<!-- FINAL ringtone player, updated @1.57pm -->
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import { getFirestore, doc, getDoc } from "firebase/firestore"; // Firestore functions

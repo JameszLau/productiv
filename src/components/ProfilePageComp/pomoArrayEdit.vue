@@ -1,123 +1,3 @@
-<!-- Updated the text, font-size, spacing, padding from top @ 2.31pm -->
-<template>
-  <Dialog>
-    <DialogContent class="w-[90vw] max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
-      <DialogHeader>
-      </DialogHeader>
-      <Tabs default-value="account" class="w-auto">
-        <TabsList class="grid w-full grid-cols-2">
-          <TabsTrigger value="account">
-            Pomodoro Messages
-          </TabsTrigger>
-          <TabsTrigger value="password">
-            Mindful Messages
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent value="account" class="pt-0">
-          <Card>
-            <CardHeader>
-              <CardTitle class="flex justify-between items-center">
-                <div class="text-lg font-[500]">Pomodoro Messages</div>
-                <Button variant="ghost" @click="addPomoMessage" v-if="pomoArray.length < maxLength" class="add-button">+</Button>
-              </CardTitle>
-              <CardDescription class="card-description">
-                These messages will be shown during your Pomodoro Session.
-                <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
-              </CardDescription>
-            </CardHeader>
-            <div class="ml-6 flex items-center space-x-4">
-              <!-- Flex container with space between elements -->
-              <p>{{ pomoArray.length }} / {{ maxLength }} Messages</p> <!-- Counter -->
-              <p v-if="pomoArray.length <= minLength" class="text-red-500 text-sm">Minimum of {{ minLength }} messages.</p>
-            </div>
-
-            <ScrollArea class="h-[220px]">
-              <CardContent class="space-y-2">
-                <ul>
-                  <li v-for="(message, index) in pomoArray" :key="index" class="relative my-2">
-                    <div class="relative">
-                      <Input 
-                        v-model="pomoArray[index]" 
-                        type="text" 
-                        class="p-4 pr-10 w-full" 
-                        placeholder="This is empty"
-                        maxlength="200"
-                      />
-                      <TrashIcon
-                        @click="removePomoMessage(index)" 
-                        class="absolute right-3 top-3 cursor-pointer w-4 h-4 hover:text-red-500 transition-opacity duration-200"
-                        :class="{
-                          'opacity-0 pointer-events-none': pomoArray.length <= minLength
-                        }" 
-                      />
-                      <div class="text-xs text-gray-500 mt-1">
-                        {{ pomoArray[index].length }}/200 characters
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </CardContent>
-            </ScrollArea>
-            <CardFooter class="flex justify-between space-x-2 mt-6"> 
-              <Button class="ml-auto" @click="updatePomoMessages">Save changes</Button>
-            </CardFooter>
-          </Card>
-        </TabsContent>
-        <TabsContent value="password" class="pt-0">
-          <Card>
-            <CardHeader>
-              <CardTitle class="flex justify-between items-center">
-                <div class="text-lg font-[500]">Mindful Messages</div>
-                <Button variant="ghost" @click="addMindMessage" v-if="mindArray.length < maxLength" class="add-button">+</Button>
-              </CardTitle>
-              <CardDescription class="card-description">
-                These messages will be shown during your Meditation Session.
-                <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
-              </CardDescription>
-            </CardHeader>
-            <div class="ml-6 flex items-center space-x-4">
-              <!-- Flex container with space between elements -->
-              <p>{{ mindArray.length }} / {{ maxLength }} Messages</p> <!-- Counter -->
-              <p v-if="mindArray.length <= minLength" class="text-red-500 text-sm">Minimum of {{ minLength }} messages.</p>
-            </div>
-
-            <ScrollArea class="h-[220px] border-slate-100">
-              <CardContent class="space-y-2">
-                <ul>
-                  <li v-for="(message, index) in mindArray" :key="index" class="relative my-2">
-                    <div class="relative">
-                      <Input 
-                        v-model="mindArray[index]" 
-                        type="text" 
-                        class="p-4 pr-10 w-full" 
-                        placeholder="This is empty"
-                        maxlength="200"
-                      />
-                      <TrashIcon
-                        @click="removeMindMessage(index)" 
-                        class="absolute right-3 top-3 cursor-pointer w-4 h-4 hover:text-red-500 transition-opacity duration-200"
-                        :class="{
-                          'opacity-0 pointer-events-none': mindArray.length <= minLength
-                        }" 
-                      />
-                      <div class="text-xs text-gray-500 mt-1">
-                        {{ mindArray[index].length }}/200 characters
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </CardContent>
-            </ScrollArea>
-            <CardFooter class="flex justify-between space-x-2 mt-6"> 
-              <Button class="ml-auto" @click="updateMindMessages">Save changes</Button>
-            </CardFooter>
-          </Card>
-        </TabsContent>
-      </Tabs>
-    </DialogContent>
-  </Dialog>
-</template>
-
 <script setup>
 import { ref, watch } from 'vue';
 import { useUserStore } from '@/stores/UserObjStore';  // Import your Pinia store
@@ -298,6 +178,125 @@ watch(() => isEditing.value, (newVal) => {
   }
 });
 </script>
+
+<template>
+  <Dialog>
+    <DialogContent class="w-[90vw] max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+      <DialogHeader>
+      </DialogHeader>
+      <Tabs default-value="account" class="w-auto">
+        <TabsList class="grid w-full grid-cols-2">
+          <TabsTrigger value="account">
+            Pomodoro Messages
+          </TabsTrigger>
+          <TabsTrigger value="password">
+            Mindful Messages
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="account" class="pt-0">
+          <Card>
+            <CardHeader>
+              <CardTitle class="flex justify-between items-center">
+                <div class="text-lg font-[500]">Pomodoro Messages</div>
+                <Button variant="ghost" @click="addPomoMessage" v-if="pomoArray.length < maxLength" class="add-button">+</Button>
+              </CardTitle>
+              <CardDescription class="card-description">
+                These messages will be shown during your Pomodoro Session.
+                <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+              </CardDescription>
+            </CardHeader>
+            <div class="ml-6 flex items-center space-x-4">
+              <!-- Flex container with space between elements -->
+              <p>{{ pomoArray.length }} / {{ maxLength }} Messages</p> <!-- Counter -->
+              <p v-if="pomoArray.length <= minLength" class="text-red-500 text-sm">Minimum of {{ minLength }} messages.</p>
+            </div>
+
+            <ScrollArea class="h-[220px]">
+              <CardContent class="space-y-2">
+                <ul>
+                  <li v-for="(message, index) in pomoArray" :key="index" class="relative my-2">
+                    <div class="relative">
+                      <Input 
+                        v-model="pomoArray[index]" 
+                        type="text" 
+                        class="p-4 pr-10 w-full" 
+                        placeholder="This is empty"
+                        maxlength="200"
+                      />
+                      <TrashIcon
+                        @click="removePomoMessage(index)" 
+                        class="absolute right-3 top-3 cursor-pointer w-4 h-4 hover:text-red-500 transition-opacity duration-200"
+                        :class="{
+                          'opacity-0 pointer-events-none': pomoArray.length <= minLength
+                        }" 
+                      />
+                      <div class="text-xs text-gray-500 mt-1">
+                        {{ pomoArray[index].length }}/200 characters
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </CardContent>
+            </ScrollArea>
+            <CardFooter class="flex justify-between space-x-2 mt-6"> 
+              <Button class="ml-auto" @click="updatePomoMessages">Save changes</Button>
+            </CardFooter>
+          </Card>
+        </TabsContent>
+        <TabsContent value="password" class="pt-0">
+          <Card>
+            <CardHeader>
+              <CardTitle class="flex justify-between items-center">
+                <div class="text-lg font-[500]">Mindful Messages</div>
+                <Button variant="ghost" @click="addMindMessage" v-if="mindArray.length < maxLength" class="add-button">+</Button>
+              </CardTitle>
+              <CardDescription class="card-description">
+                These messages will be shown during your Meditation Session.
+                <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+              </CardDescription>
+            </CardHeader>
+            <div class="ml-6 flex items-center space-x-4">
+              <!-- Flex container with space between elements -->
+              <p>{{ mindArray.length }} / {{ maxLength }} Messages</p> <!-- Counter -->
+              <p v-if="mindArray.length <= minLength" class="text-red-500 text-sm">Minimum of {{ minLength }} messages.</p>
+            </div>
+
+            <ScrollArea class="h-[220px] border-slate-100">
+              <CardContent class="space-y-2">
+                <ul>
+                  <li v-for="(message, index) in mindArray" :key="index" class="relative my-2">
+                    <div class="relative">
+                      <Input 
+                        v-model="mindArray[index]" 
+                        type="text" 
+                        class="p-4 pr-10 w-full" 
+                        placeholder="This is empty"
+                        maxlength="200"
+                      />
+                      <TrashIcon
+                        @click="removeMindMessage(index)" 
+                        class="absolute right-3 top-3 cursor-pointer w-4 h-4 hover:text-red-500 transition-opacity duration-200"
+                        :class="{
+                          'opacity-0 pointer-events-none': mindArray.length <= minLength
+                        }" 
+                      />
+                      <div class="text-xs text-gray-500 mt-1">
+                        {{ mindArray[index].length }}/200 characters
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </CardContent>
+            </ScrollArea>
+            <CardFooter class="flex justify-between space-x-2 mt-6"> 
+              <Button class="ml-auto" @click="updateMindMessages">Save changes</Button>
+            </CardFooter>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </DialogContent>
+  </Dialog>
+</template>
 
 <style scoped>
 .update-button {

@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger, } from '@/components/ui/tabs'
 
 import timerSettingsCard from '@/components/PomoPageComp/timerSettingsCard.vue';
 import blackoutPopup from '@/components/PomoPageComp/blackoutPopup.vue';
-import taskListCard from '@/components/TaskListComp/Tasklist.vue';
+import taskListCard from '@/components/TaskListComp/tasklist.vue';
 import musicPlayer from '@/components/MusicPlayerComp/musicPlayerFinal.vue';
 
 // timer settings pop up card with button

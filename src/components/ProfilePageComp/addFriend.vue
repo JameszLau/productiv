@@ -1,61 +1,3 @@
-<template>
-  <Dialog :open="open" @update:open="$emit('update:open', $event)">
-    <DialogContent class="w-[90vw] max-w-[425px] mx-auto">
-      <DialogHeader>
-        <DialogTitle>Follow User</DialogTitle>
-        <DialogDescription>
-          Follow user by their username to connect with them.
-        </DialogDescription>
-      </DialogHeader>
-
-      <!-- Friend List Display -->
-      <ScrollArea v-if="displayFriendList.length" class="h-[200px] rounded-md border p-2">
-        <div class="divide-y divide-gray-200">
-          <div v-for="friend in displayFriendList" :key="friend.uid" class="flex items-center justify-between py-1">
-            <span class="pl-2">{{ friend.username }}</span>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              @click="removeFriend(friend.uid)"
-              class="hover:text-red-500 transition-colors"
-            >
-              <TrashIcon class="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </ScrollArea>
-      <div v-else class="text-sm text-muted-foreground py-4">
-        You have no people followed yet.
-      </div>
-
-      <!-- Add Friend Section -->
-      <div class="grid gap-4 py-4">
-        <div class="grid grid-cols-4 items-center gap-4">
-          <Label class="text-right">Username</Label>
-          <Input
-            v-model="friendUsername"
-            placeholder="Enter person's username"
-            class="col-span-3"
-          />
-        </div>
-      </div>
-
-      <!-- Error/Success Messages -->
-      <div v-if="errorMessage" class="text-sm text-red-500 mb-4">
-        {{ errorMessage }}
-      </div>
-      <div v-if="successMessage" class="text-sm text-green-500 mb-4">
-        {{ successMessage }}
-      </div>
-
-      <DialogFooter>
-        <Button variant="outline" @click="closeDialog">Cancel</Button>
-        <Button :disabled="isAdding" @click="submitFriend">Follow</Button>
-      </DialogFooter>
-    </DialogContent>
-  </Dialog>
-</template>
-
 <script setup>
 import { ref, onMounted, watch } from 'vue';
 import { db } from '@/main';
@@ -257,4 +199,64 @@ const getCurrentUserId = () => {
   return user.uid;
 };
 </script>
+
+<template>
+  <Dialog :open="open" @update:open="$emit('update:open', $event)">
+    <DialogContent class="w-[90vw] max-w-[425px] mx-auto">
+      <DialogHeader>
+        <DialogTitle>Follow User</DialogTitle>
+        <DialogDescription>
+          Follow user by their username to connect with them.
+        </DialogDescription>
+      </DialogHeader>
+
+      <!-- Friend List Display -->
+      <ScrollArea v-if="displayFriendList.length" class="h-[200px] rounded-md border p-2">
+        <div class="divide-y divide-gray-200">
+          <div v-for="friend in displayFriendList" :key="friend.uid" class="flex items-center justify-between py-1">
+            <span class="pl-2">{{ friend.username }}</span>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              @click="removeFriend(friend.uid)"
+              class="hover:text-red-500 transition-colors"
+            >
+              <TrashIcon class="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </ScrollArea>
+      <div v-else class="text-sm text-muted-foreground py-4">
+        You have no people followed yet.
+      </div>
+
+      <!-- Add Friend Section -->
+      <div class="grid gap-4 py-4">
+        <div class="grid grid-cols-4 items-center gap-4">
+          <Label class="text-right">Username</Label>
+          <Input
+            v-model="friendUsername"
+            placeholder="Enter person's username"
+            class="col-span-3"
+          />
+        </div>
+      </div>
+
+      <!-- Error/Success Messages -->
+      <div v-if="errorMessage" class="text-sm text-red-500 mb-4">
+        {{ errorMessage }}
+      </div>
+      <div v-if="successMessage" class="text-sm text-green-500 mb-4">
+        {{ successMessage }}
+      </div>
+
+      <DialogFooter>
+        <Button variant="outline" @click="closeDialog">Cancel</Button>
+        <Button :disabled="isAdding" @click="submitFriend">Follow</Button>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+</template>
+
+
   

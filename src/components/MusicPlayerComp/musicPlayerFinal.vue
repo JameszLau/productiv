@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Slider } from '@/components/ui/slider';
 import { Shuffle, SkipBack, Play, Pause, SkipForward, Repeat } from 'lucide-vue-next';
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const songs = ref([]);
 const currentSongIndex = ref(0);

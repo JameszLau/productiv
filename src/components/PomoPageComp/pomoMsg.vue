@@ -1,21 +1,3 @@
-<template>
-  <div class="pomo-msg-container">
-    <!-- Show loading message if data is being fetched -->
-    <div v-if="isLoading">
-      <p>Loading messages...</p>
-    </div>
-
-    <!-- Display the currently selected message -->
-    <div v-else-if="pomoMsgArray && pomoMsgArray.length > 0">
-      <p class="pomo-msg">{{ currentMessage }}</p>
-    </div>
-
-    <!-- Show this message if there are no messages available -->
-    <div v-else>
-      <p>No messages available.</p>
-    </div>
-  </div>
-</template>
 
 <script>
 import { useUserStore } from '@/stores/UserObjStore';
@@ -84,6 +66,25 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="pomo-msg-container">
+    <!-- Show loading message if data is being fetched -->
+    <div v-if="isLoading">
+      <p>Loading messages...</p>
+    </div>
+
+    <!-- Display the currently selected message -->
+    <div v-else-if="pomoMsgArray && pomoMsgArray.length > 0">
+      <p class="pomo-msg">{{ currentMessage }}</p>
+    </div>
+
+    <!-- Show this message if there are no messages available -->
+    <div v-else>
+      <p>No messages available.</p>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .pomo-msg {
