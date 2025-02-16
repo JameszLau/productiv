@@ -23,14 +23,14 @@ This project is a Pomodoro Task-list application with the following features:
 - Focus mode reminders
 
 The intent for this app is to enable the users to:
-- Understand their productivity through:
+1) Understand their productivity through:
    1. Pomodoro-synchronised task lists and items
    2. Data analytics derived from time recorded on each task and mindfulness
-- Enable focus through:
+2) Enable focus through:
    1. Black Out Pomodoro timers
    2. Webpage monitoring Focus reminders
    3. Built in music player with focus soundtracks
-- Relax and recover through:
+3) Relax and recover through:
    1. Visual guided meditation timer utilising box breath
    2. Built in relaxation music
 - Leverage motivation and connect with peers via our leaderboards
