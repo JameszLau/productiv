@@ -14,11 +14,30 @@ This is a Vue.js project deployed on [Vercel](https://vercel.com/) and available
 
 ## Project Overview
 
-This project is a Vue.js application designed to help people focus better for their task at hand and keeps track of their data for gamification and data visualization. It uses Vercel for seamless deployment, enabling a fast and reliable user experience.
+This project is a Pomodoro Task-list application with the following features:
+- Task-synchronised 'black out' Pomodoro
+- Guided breathing meditation timer
+- Data analytics of time spent in meditation and productivity
+- Social Leaderboard
+- Built in music player with soundtracks
+- Focus mode reminders
+
+The intent for this app is to enable the users to:
+- Understand their productivity through:
+   1. Pomodoro-synchronised task lists and items
+   2. Data analytics derived from time recorded on each task and mindfulness
+- Enable focus through:
+   1. Black Out Pomodoro timers
+   2. Webpage monitoring Focus reminders
+   3. Built in music player with focus soundtracks
+- Relax and recover through:
+   1. Visual guided meditation timer utilising box breath
+   2. Built in relaxation music
+- Leverage motivation and connect with peers via our leaderboards
 
 ## Login Credentials
 
-- Email: benchia@gmail.com
+- Email: tester@email.com
 - Password: banana
 
 ## Live Demo
@@ -28,8 +47,9 @@ Access the live project here: [productiv.vercel.app](https://productiv.vercel.ap
 ## Technologies Used
 
 - **Vue.js**: JavaScript framework for building interactive user interfaces
+- **Pinia**: State management library for Vue
 - **Vue Router**: Handles application routing
-- **TailWind**: To style the page
+- **Shadcn, TailWind, CSS**: For page styling
 - **Vercel**: Deployment and hosting platform
 
 ## Installation
@@ -38,11 +58,11 @@ To set up the project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Theoj-l/WAD2.git
+   git clone https://github.com/JameszLau/productiv.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd WAD2
+   cd productiv
    ```
 3. Install dependencies:
    ```bash
@@ -50,7 +70,7 @@ To set up the project locally, follow these steps:
    ```
 4. Start the development server:
    ```bash
-   npm run serve
+   npm run dev
    ```
 
 The app should now be running on [localhost:5173](http://localhost:5173).
