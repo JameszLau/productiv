@@ -33,7 +33,7 @@ The intent for this app is to enable the users to:
 3) Relax and recover through:
    1. Visual guided meditation timer utilising box breath
    2. Built in relaxation music
-- Leverage motivation and connect with peers via our leaderboards
+4) Leverage motivation and connect with peers via our leaderboards
 
 ## Login Credentials
 
