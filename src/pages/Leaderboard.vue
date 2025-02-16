@@ -254,15 +254,6 @@ const skeletonRows = computed(() => Array(10).fill(null));
             </CardHeader>
             <CardContent>
               <div class="rounded-md border h-full">
-                <!-- <Table class="table-auto w-full">
-                  <TableHeader>
-                    <TableRow v-for="headerGroup in globalTable.getHeaderGroups()" :key="headerGroup.id">
-                      <TableHead v-for="header in headerGroup.headers" :key="header.id">
-                        <FlexRender v-if="!header.isPlaceholder" :render="header.column.columnDef.header" :props="header.getContext()" />
-                      </TableHead>
-                    </TableRow>
-                  </TableHeader>
-                </Table> -->
                 <ScrollArea class="h-[calc(100dvh-220px)]">
                 <Table class="table-auto w-full">
                   <TableHeader>
@@ -373,6 +364,7 @@ const skeletonRows = computed(() => Array(10).fill(null));
                         </TableRow>
                       </template>
                     </template>
+
                     <TableRow v-else>
                       <TableCell :colspan="columns.length" class="h-24 text-center">
                         No results.

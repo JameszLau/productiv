@@ -12,7 +12,7 @@ import { useUserStore } from '@/stores/UserObjStore.js';
 
 const dvAr = computed(() => useUserStore().tag_time_obj);
 const dvArr = ref(dvAr.value);
-console.log(dvArr)
+console.log(dvAr.value)
 
 const selectedMode = ref('Today');
 const selectedModeTop3 = ref('Today');
@@ -182,18 +182,6 @@ const breakdownData = computed(() => {
   return data;
 });
 
-const topCategories = computed(() => {
-  const sortedData = filteredDataTop3.value.sort((a, b) => b.total - a.total);
-  const totalTime = sortedData.reduce((sum, item) => sum + item.total, 0);
-  
-  return sortedData.slice(0, 3).map((item) => ({
-    category: item.subject,
-    time: formatDuration(item.total),
-    color: item.color,
-    percentage: ((item.total / totalTime) * 100).toFixed(1)
-  }));
-});
-
 const showBreakdown = ref(false);
 
 // Function to toggle the breakdown visibility
@@ -215,6 +203,7 @@ const toggleBreakdown = () => {
             <DropdownMenuTrigger class="border border-solid px-2 py-1 rounded">Filter</DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem @click="selectedMode = 'Today'">Today</DropdownMenuItem>
+              <DropdownMenuItem @click="check">check</DropdownMenuItem>
               <DropdownMenuItem @click="selectedMode = 'Past Week'">Past Week</DropdownMenuItem>
               <DropdownMenuItem @click="handleDateRangeSelect()">Date Range</DropdownMenuItem>
             </DropdownMenuContent>
@@ -272,6 +261,7 @@ const toggleBreakdown = () => {
     </Card>
   </div>
 </template>
+
 <style scoped>
 .donut-container {
   height: 100%;
