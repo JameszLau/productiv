@@ -1,6 +1,6 @@
 # Productiv
 
-This is a Vue.js project deployed on [Vercel](https://vercel.com/) and available at [productiv.vercel.app](https://productiv.vercel.app).
+This is a Vue.js project deployed on [Vercel](https://vercel.com/) and available at [pductiv.vercel.app](https://pductiv.vercel.app).
 
 ## Table of Contents
 
@@ -42,7 +42,7 @@ The intent for this app is to enable the users to:
 
 ## Live Demo
 
-Access the live project here: [productiv.vercel.app](https://productiv.vercel.app)
+Access the live project here: [pductiv.vercel.app](https://pductiv.vercel.app)
 
 ## Technologies Used
 
